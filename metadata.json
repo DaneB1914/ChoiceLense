@@ -1,0 +1,6 @@
+{
+  "name": "ChoiceLens — Beta Demo",
+  "description": "Experimental AI decision-support portfolio demo with five analysis lenses. AI features may fail or be temporarily unavailable.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
