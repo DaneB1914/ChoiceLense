@@ -1,4 +1,4 @@
-# ChoiceLens
+![ChoiceLens Banner](./ChoiceLens%20Refraction%20Wordmark%20Banner.png)
 
 **An experimental AI decision-support app.** Frame a choice, compare two to five options, and explore the trade-offs through five analysis lenses.
 
