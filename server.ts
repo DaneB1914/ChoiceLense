@@ -786,7 +786,7 @@ Keep responses concise, incisive, empathetic, and pragmatic (under 180 words unl
 
 // Setup Vite middleware in dev or static files in prod
 async function startServer() {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production' && !process.argv.includes('--production')) {
     const isHmrDisabled = process.env.DISABLE_HMR === 'true';
     const vite = await createViteServer({
       server: {
@@ -798,6 +798,9 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
+    app.use('/api', (_req, res) => {
+      res.status(404).json({ error: 'API endpoint not found.' });
+    });
     app.use(express.static(path.resolve(__dirname, 'dist')));
     app.get('*', (_req, res) => {
       res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
